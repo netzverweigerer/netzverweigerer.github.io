@@ -4,9 +4,12 @@
 <script language="JavaScript">
 function redirectHttpToHttps()
 {
-    var httpURL= window.location.hostname + window.location.pathname + window.location.search;
-    var httpsURL= "https://" + httpURL;
-    window.location = httpsURL;
+
+if (window.location.protocol != "https:") {
+   window.location.protocol = "https:";
+   window.location.reload();
+}
+
 }
 redirectHttpToHttps();
 </script>
